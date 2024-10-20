@@ -1,5 +1,5 @@
 <script setup>
-// import TheWelcome from '../components/TheWelcome.vue'
+//import iconGithub from '../components/icons/IconGithub.vue';
 // importar aqui os componentes, como exemplo acima
 </script>
 
@@ -12,7 +12,8 @@
         <div v-if="contacts.length > 0" class="box-contacts">
             <div v-for="(contact, index) in contacts" :key="index">
                 <a :href="contact.link" target="_blank" rel="noopener noreferrer">
-                    <img class="contactsIcon" :src="contact.icon" srcset="">
+
+                    <component :is="contact.icon.component" class="contactsIcon" />
                     {{ contact.name }}
                 </a>
             </div>
@@ -27,6 +28,10 @@
 </template>
 
 <script>
+import IconLinkedin from '@/components/icons/IconLinkedin.vue';
+import iconGithub from '@/components/icons/IconGithub.vue';
+
+
 export default {
     data() {
         return {
@@ -35,12 +40,16 @@ export default {
                 {
                     name: "GitHub",
                     link: "https://github.com/Daandrn",
-                    icon: "/src/components/icons/icon-github.png"
+                    icon: {
+                        component: iconGithub,
+                    }
                 },
                 {
                     name: "LinkedIn",
                     link: "https://www.linkedin.com/in/danillo-rodrigues/",
-                    icon: "/src/components/icons/icon-linkedin.png"
+                    icon: {
+                        component: IconLinkedin,
+                    }
                 },
             ]
         }
@@ -66,7 +75,7 @@ main {
 .contactsIcon {
     border-radius: 0.5rem;
 
-    height: 1.3rem;
-    width: 1.3rem;
+    height: 2rem;
+    width: 2rem;
 }
 </style>

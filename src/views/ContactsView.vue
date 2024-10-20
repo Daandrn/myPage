@@ -12,7 +12,8 @@
         <div v-if="contacts.length > 0" class="box-contacts">
             <div v-for="(contact, index) in contacts" :key="index">
                 <a :href="contact.link" target="_blank" rel="noopener noreferrer">
-                    <img class="contactsIcon" :src="contact.icon" :alt="contact.name" srcset="">
+                    <img class="contactsIcon" :src="contact.icon" srcset="">
+                    {{ contact.name }}
                 </a>
             </div>
         </div>

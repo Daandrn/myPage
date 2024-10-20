@@ -11,22 +11,23 @@
 
     <div v-if="experiences.length > 0">
       <div v-for="(experience, index) in experiences" :key="index">
-        <a :href="experience.link" target="_blank" :alt="experience.name" rel="noopener noreferrer">
+        <a :href="experience.link" target="_blank" rel="noopener noreferrer">
+          {{ experience.name }}
         </a>
-
-        <div>
-          <h3>Empresa:</h3>
-
-          <div>
-            {{ experience.enterprise }}
-          </div>
-        </div>
 
         <div>
           <h3>Atividades:</h3>
 
           <div>
             {{ experience.activities }}
+          </div>
+        </div>
+
+        <div>
+          <h3>Empresa:</h3>
+
+          <div>
+            {{ experience.enterprise }}
           </div>
         </div>
 

@@ -1,18 +1,20 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router';
-import HelloWorld from './components/HelloWorld.vue';
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <ul>
+          <RouterLink to="/">{{ about }}</RouterLink>
+        </ul>
+        <ul>
+          <RouterLink to="/projects">{{ projects }}</RouterLink>
+        </ul>
+        <ul>
+          <RouterLink to="/contacts">{{ contacts }}</RouterLink>
+        </ul>
       </nav>
     </div>
   </header>
@@ -20,10 +22,24 @@ import HelloWorld from './components/HelloWorld.vue';
   <RouterView />
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      about: "Sobre mim",
+      projects: "Projetos",
+      contacts: "Contatos",
+    }
+  }
+}
+</script>
+
 <style scoped>
 header {
+  display: flex;
   line-height: 1.5;
   max-height: 100vh;
+  justify-content: end;
 }
 
 .logo {
@@ -32,6 +48,10 @@ header {
 }
 
 nav {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
   width: 100%;
   font-size: 12px;
   text-align: center;
@@ -46,19 +66,34 @@ nav a.router-link-exact-active:hover {
   background-color: transparent;
 }
 
+nav ul {
+  padding: 0 20px 0 0;
+}
+
 nav a {
   display: inline-block;
   padding: 0 1rem;
   border-left: 1px solid var(--color-border);
+
+  width: max-content;
 }
 
 nav a:first-of-type {
   border: 0;
 }
 
+@media (min-width: 430px) {
+  nav {
+    flex-direction: row;
+  }
+
+  nav ul {
+    padding: 0 30px 0 0;
+  }
+}
+
 @media (min-width: 1024px) {
   header {
-    display: flex;
     place-items: center;
     padding-right: calc(var(--section-gap) / 2);
   }
@@ -74,6 +109,8 @@ nav a:first-of-type {
   }
 
   nav {
+    flex-wrap: nowrap;
+
     text-align: left;
     margin-left: -1rem;
     font-size: 1rem;

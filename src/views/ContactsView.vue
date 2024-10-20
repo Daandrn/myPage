@@ -13,7 +13,6 @@
             <div v-for="(contact, index) in contacts" :key="index">
                 <a :href="contact.link" target="_blank" rel="noopener noreferrer">
                     <img class="contactsIcon" :src="contact.icon" :alt="contact.name" srcset="">
-                    {{ contact.name }}
                 </a>
             </div>
         </div>

@@ -11,8 +11,7 @@
 
     <div v-if="experiences.length > 0">
       <div v-for="(experience, index) in experiences" :key="index">
-        <a :href="experience.link" target="_blank" rel="noopener noreferrer">
-          {{ experience.name }}
+        <a :href="experience.link" target="_blank" :alt="experience.name" rel="noopener noreferrer">
         </a>
 
         <div>

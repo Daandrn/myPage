@@ -66,7 +66,7 @@ export default {
                 {
                     name: "GTX Team",
                     link: "https://github.com/Daandrn/GTX-4.0/tree/GTX-3.0",
-                    about: "Sendo o primeiro projeto construído por mim, o \\\"GTX team\\\" é uma aplicação web para gerenciamento de membros e canais de stream do time/clã Ghost toxic.",
+                    about: "Sendo o primeiro projeto construído por mim, o \"GTX team\" é uma aplicação web para gerenciamento de membros e canais de stream do time/clã Ghost toxic.",
                     techs: "Construído com php 8.1, html, css e JavaScript.",
                 },
                 {

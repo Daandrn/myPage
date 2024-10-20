@@ -38,14 +38,14 @@ export default {
             title: "Contatos",
             contacts: [
                 {
-                    name: "GitHub",
+                    name: "GitHub/daandrn",
                     link: "https://github.com/Daandrn",
                     icon: {
                         component: iconGithub,
                     }
                 },
                 {
-                    name: "LinkedIn",
+                    name: "LinkedIn/danillo-rodrigues",
                     link: "https://www.linkedin.com/in/danillo-rodrigues/",
                     icon: {
                         component: IconLinkedin,
@@ -73,9 +73,11 @@ main {
 }
 
 .contactsIcon {
-    border-radius: 0.5rem;
+    border-radius: 0.4rem;
 
-    height: 2rem;
-    width: 2rem;
+    height: 1.5rem;
+    width: 1.5rem;
+
+    background-color: var(--white-text);
 }
 </style>

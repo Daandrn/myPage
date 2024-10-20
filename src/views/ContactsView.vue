@@ -35,12 +35,12 @@ export default {
                 {
                     name: "GitHub",
                     link: "https://github.com/Daandrn",
-                    icon: "src/components/icons/icon-github.png"
+                    icon: "/src/components/icons/icon-github.png"
                 },
                 {
                     name: "LinkedIn",
                     link: "https://www.linkedin.com/in/danillo-rodrigues/",
-                    icon: "src/components/icons/icon-linkedin.png"
+                    icon: "/src/components/icons/icon-linkedin.png"
                 },
             ]
         }

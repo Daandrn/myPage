@@ -20,7 +20,7 @@
 
 
     <div v-if="techs.length > 0" class="stack">
-      <div v-for="(tech, index) in techs" :key="index">
+      <div v-for="(tech, index) in techs" :key="index" class="tech">
         <div>
           <div>
             <a :href="tech.link" target="_blank" rel="noopener noreferrer">
@@ -200,11 +200,15 @@ main {
   flex-direction: row;
   flex-wrap: wrap;
 
-  gap: 1rem;
+  justify-content: space-evenly;
 
   min-width: 100%;
 
   padding: 0 1rem;
+}
+
+.tech {
+  min-width: 7rem;
 }
 
 .techsIcon {
@@ -230,6 +234,7 @@ main {
 
   .about,
   .stack {
+    justify-content: unset;
     padding: 0 15rem;
   }
 }

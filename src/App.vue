@@ -19,14 +19,18 @@ import { RouterLink, RouterView } from 'vue-router';
     </div>
   </header>
 
-  <RouterView />
+  <router-view v-slot="{ Component }">
+    <transition name="fade" mode="out-in">
+      <component :is="Component" />
+    </transition>
+  </router-view>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      about: "Sobre mim",
+      about: "Home",
       projects: "Projetos",
       contacts: "Contatos",
     }
@@ -35,6 +39,17 @@ export default {
 </script>
 
 <style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.3s ease;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
 header {
   display: flex;
   line-height: 1.5;
@@ -74,6 +89,10 @@ nav a {
   display: inline-block;
   padding: 0 1rem;
   border-left: 1px solid var(--color-border);
+
+  display: flex;
+
+  align-items: center;
 
   width: max-content;
 }

@@ -9,7 +9,7 @@
             <h2>{{ title }}</h2>
         </div>
 
-        <div v-if="contacts.length > 0" class="box-contacts">
+        <div v-if="contacts.length > 0" class="contacts">
             <div v-for="(contact, index) in contacts" :key="index">
                 <a :href="contact.link" target="_blank" rel="noopener noreferrer">
 
@@ -30,7 +30,7 @@
 <script>
 import IconLinkedin from '@/components/icons/IconLinkedin.vue';
 import iconGithub from '@/components/icons/IconGithub.vue';
-
+import IconDiscord from '@/components/icons/IconDiscord.vue';
 
 export default {
     data() {
@@ -51,6 +51,13 @@ export default {
                         component: IconLinkedin,
                     }
                 },
+                {
+                    name: "Discord/daandrn",
+                    link: "https://www.discord.com/channels/@367867450915553284",
+                    icon: {
+                        component: IconDiscord,
+                    }
+                },
             ]
         }
     }
@@ -63,13 +70,25 @@ main {
     flex-direction: column;
 
     height: 100%;
+    padding-bottom: 5rem;
 
     align-items: center;
 }
 
 .header {
-    height: 10rem;
-    margin-top: 5rem;
+    height: 5rem;
+    margin-top: 4rem;
+}
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1rem;
+
+    min-width: 100%;
+
+    padding: 0 15rem;
 }
 
 .contactsIcon {
@@ -79,5 +98,7 @@ main {
     width: 1.5rem;
 
     background-color: var(--white-text);
+
+    color: black;
 }
 </style>

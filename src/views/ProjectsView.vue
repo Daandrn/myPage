@@ -6,21 +6,21 @@
 <template>
     <main>
         <div class="header">
-            <h2>{{ title }}</h2>
+            <h2>{{ titles.projects }}</h2>
         </div>
 
-        <div v-if="projects.length > 0">
+        <div v-if="projects.length > 0" class="projects">
             <div v-for="(project, index) in projects" :key="index">
                 <div>
-                    <h3>Acesse:</h3>
-
                     <a :href="project.link" target="_blank" rel="noopener noreferrer">
-                        {{ project.name }}
+                        Acesse: {{ project.name }}
                     </a>
                 </div>
 
                 <div>
-                    <h3>Sobre:</h3>
+                    <h3>
+                        <p><b>Sobre:</b></p>
+                    </h3>
 
                     <div>
                         {{ project.about }}
@@ -28,7 +28,9 @@
                 </div>
 
                 <div>
-                    <h3>Tecnologias:</h3>
+                    <h3>
+                        <p><b>Tecnologias:</b></p>
+                    </h3>
 
                     <div>
                         {{ project.techs }}
@@ -42,6 +44,55 @@
                 Não há Projetos.
             </div>
         </div>
+
+        <div class="header">
+            <h2>{{ titles.experiences }}</h2>
+        </div>
+
+        <div v-if="experiences.length > 0" class="experiences">
+            <div v-for="(experience, index) in experiences" :key="index">
+                <a :href="experience.link" target="_blank" rel="noopener noreferrer">
+                    {{ experience.name }}
+                </a>
+
+                <div>
+                    <h3>
+                        <p><strong>Atividades:</strong></p>
+                    </h3>
+
+                    <div>
+                        {{ experience.activities }}
+                    </div>
+                </div>
+
+                <div>
+                    <h3>
+                        <p><strong>Empresa:</strong></p>
+                    </h3>
+
+                    <div>
+                        {{ experience.enterprise }}
+                    </div>
+                </div>
+
+                <div>
+                    <h3>
+                        <p><strong>Desde:</strong></p>
+                    </h3>
+
+                    <div>
+                        {{ experience.since }}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div v-else>
+            <div>
+                Não há experiências.
+            </div>
+        </div>
     </main>
 </template>
 
@@ -49,7 +100,10 @@
 export default {
     data() {
         return {
-            title: "Projetos",
+            titles: {
+                projects: "Projetos",
+                experiences: "Experiências"
+            },
             projects: [
                 {
                     name: "Finance",
@@ -72,10 +126,26 @@ export default {
                 {
                     name: "Daandrn Page",
                     link: "/",
-                    about: "Esta é minha pagina pessoal, construída para reunir minhas experiências profissionais e meus contatos.",
+                    about: "Esta é minha pagina pessoal, construída para reunir meus projetos, experiências profissionais e meus contatos.",
                     techs: "Construído com Vue.js v3.",
                 },
-            ]
+            ],
+            experiences: [
+                {
+                    name: "Analista",
+                    enterprise: "Contass Contabilidade e Consultoria",
+                    activities: "Levantamento de requisitos de produto, testes E2E, banco de dados",
+                    link: "https://www.linkedin.com/in/danillo-rodrigues/details/experience/",
+                    since: "2020"
+                },
+                {
+                    name: "Analista de Produto",
+                    enterprise: "RDL Sistemas e Aplicativos",
+                    activities: "Levantamento de requisitos de produto, testes E2E",
+                    link: "https://www.linkedin.com/in/danillo-rodrigues/details/experience/",
+                    since: "2023"
+                },
+            ],
         }
     }
 }
@@ -87,19 +157,35 @@ main {
     flex-direction: column;
 
     height: 100%;
+    padding-bottom: 5rem;
 
     align-items: center;
 }
 
 .header {
-    height: 10rem;
-    margin-top: 5rem;
+    height: 5rem;
+    margin-top: 4rem;
 }
 
 .projects {
-    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
 
-    height: 1.3rem;
-    width: 1.3rem;
+    gap: 2rem;
+
+    min-width: 100%;
+
+    padding: 0 15rem;
+}
+
+.experiences {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2rem;
+
+    min-width: 100%;
+
+    padding: 0 15rem;
 }
 </style>

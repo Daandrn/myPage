@@ -16,17 +16,25 @@
 }
 
 a,
-.green {
+.purple {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
+  color: rgb(85, 22, 22);
   transition: 0.4s;
   padding: 3px;
+
+  height: 2rem;
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+
+  gap: 0.5rem;
 }
 
 @media (hover: hover) {
   a:hover {
     border-radius: 0.4rem;
-    background-color: hsla(160, 100%, 37%, 0.2);
+    background-color: hsla(0, 58%, 22%, 0.2);
   }
 }
 

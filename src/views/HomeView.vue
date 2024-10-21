@@ -186,7 +186,7 @@ main {
 
   min-width: 100%;
 
-  padding: 0 15rem;
+  padding: 0 1rem;
 
   text-align: justify;
 }
@@ -204,7 +204,7 @@ main {
 
   min-width: 100%;
 
-  padding: 0 15rem;
+  padding: 0 1rem;
 }
 
 .techsIcon {
@@ -216,5 +216,21 @@ main {
   background-color: var(--white-text);
 
   color: black;
+}
+
+@media (min-width: 600px) {
+
+  .about,
+  .stack {
+    padding: 0 7rem;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .about,
+  .stack {
+    padding: 0 15rem;
+  }
 }
 </style>

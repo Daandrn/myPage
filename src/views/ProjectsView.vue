@@ -175,7 +175,7 @@ main {
 
     min-width: 100%;
 
-    padding: 0 15rem;
+    padding: 0 1rem;
 }
 
 .experiences {
@@ -186,6 +186,22 @@ main {
 
     min-width: 100%;
 
-    padding: 0 15rem;
+    padding: 0 1rem;
+}
+
+@media (min-width: 600px) {
+
+    .experiences,
+    .projects {
+        padding: 0 7rem;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .experiences,
+    .projects {
+        padding: 0 15rem;
+    }
 }
 </style>

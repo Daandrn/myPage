@@ -88,7 +88,7 @@ main {
 
     min-width: 100%;
 
-    padding: 0 15rem;
+    padding: 0 1rem;
 }
 
 .contactsIcon {
@@ -100,5 +100,17 @@ main {
     background-color: var(--white-text);
 
     color: black;
+}
+
+@media (min-width: 600px) {
+    .contacts {
+        padding: 0 8rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .contacts {
+        padding: 0 15rem;
+    }
 }
 </style>

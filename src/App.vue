@@ -16,7 +16,7 @@ import { RouterLink, RouterView } from 'vue-router';
           <RouterLink to="/contacts">{{ contacts }}</RouterLink>
         </ul>
         <ul>
-          <RouterLink to="/doc">{{ doc }}</RouterLink>
+          <RouterLink to="/docs">{{ docs }}</RouterLink>
         </ul>
       </nav>
     </div>
@@ -36,7 +36,7 @@ export default {
       about: "Home",
       projects: "Projetos",
       contacts: "Contatos",
-      doc: "Documentação",
+      docs: "Documentação",
     }
   }
 }

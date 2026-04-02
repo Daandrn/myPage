@@ -21,6 +21,11 @@ const router = createRouter({
       name: 'contactsVue',
       component: ContactsView
     },
+    {
+      path: '/docs',
+      name: 'docsVue',
+      component: DocsView
+    },
     // exemplo de como chamar a rota de uma forma diferente, usando lambda
     // {
     //   path: '/about',

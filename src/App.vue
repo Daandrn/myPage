@@ -33,6 +33,7 @@ export default {
       about: "Home",
       projects: "Projetos",
       contacts: "Contatos",
+      Doc: "Documentação",
     }
   }
 }
